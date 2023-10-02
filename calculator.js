@@ -79,7 +79,6 @@ function operatorClick(operatorInput) {
             calcNum1 = Number(displayValue);
             displayValue = operate(calcNum2, calcNum1, calcOperator);
             displayValue = displayValue.toString();
-            console.log(typeof displayValue);
             changeDisplay();
             calcOperator = null;
         }        
@@ -188,3 +187,59 @@ btnEquals.addEventListener('click', () => {
     operatorClick();
 });
 
+window.addEventListener('keydown', function(event) {
+    if(event.key == 7) {
+        numButtonClick('7');
+    }
+    else if(event.key == 8) {
+        numButtonClick('8');
+    }
+    else if(event.key == 9) {
+        numButtonClick('9');
+    }
+    else if(event.key == 4) {
+        numButtonClick('4');
+    }
+    else if(event.key == 5) {
+        numButtonClick('5');
+    }
+    else if(event.key == 6) {
+        numButtonClick('6');
+    }
+    else if(event.key == 1) {
+        numButtonClick('1');
+    }
+    else if(event.key == 2) {
+        numButtonClick('2');
+    }
+    else if(event.key == 3) {
+        numButtonClick('3');
+    }
+    else if(event.key == 0) {
+        numButtonClick('0');
+    }
+    else if(event.key == '.') {
+        numButtonClick('.');
+    }
+    else if(event.key == '+') {
+        operatorClick('+');
+    }
+    else if(event.key == '-') {
+        operatorClick('-');
+    }
+    else if(event.key == '*') {
+        operatorClick('*');
+    }
+    else if(event.key == '/') {
+        operatorClick('/');
+    }
+    else if(event.key == 'Delete') {
+        clearInput();
+    }
+    else if(event.key == 'Backspace') {
+        backSpace();
+    }
+    else if(event.key == 'Enter') {
+        operatorClick();
+    }
+});
